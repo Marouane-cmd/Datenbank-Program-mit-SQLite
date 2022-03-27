@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane prefHeight="698.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontaktpackage.KontaktController">
+   <children>
+      <TabPane layoutX="-3.0" prefHeight="698.0" prefWidth="843.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Freunde">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="2.0" layoutY="-1.0" prefHeight="674.0" prefWidth="843.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="670.0" prefWidth="238.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Neuer Kontakt :" />
+                                    <TextField fx:id="firstNameTextField" onKeyReleased="#keyReleasedProerty" promptText="Vorname" />
+                                    <TextField fx:id="lastNameTextField" onKeyReleased="#keyReleasedProerty" promptText="Nachname" />
+                                    <TextField fx:id="phoneTextField" onKeyReleased="#keyReleasedProerty" promptText="Handy" />
+                                    <TextField fx:id="emailTextField" onKeyReleased="#keyReleasedProerty" promptText="Email" />
+                                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="238.0" spacing="10.0">
+                                       <children>
+                                          <Button fx:id="createButton" mnemonicParsing="false" onAction="#createButtonTapped" text="Erstellen" />
+                                          <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonTapped" text="Abrechen" />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#loadContactOndatabase" text="Lade Kontakte" />
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                       <children>
+                                          <Label text="Datenbank Status" />
+                                          <Circle fx:id="dbStatusLight" fill="#ff1f1f" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding></VBox>
+                              <TableView fx:id="kontakTableView" onKeyReleased="#keyReleasedProerty" prefHeight="636.0" prefWidth="605.0">
+                                <columns>
+                                  <TableColumn fx:id="firstNameColumn" prefWidth="138.40004575252533" text="Vorname" />
+                                  <TableColumn fx:id="lastNameColumn" prefWidth="155.99993896484375" text="Nachname" />
+                                    <TableColumn fx:id="phoneColumn" prefWidth="152.800048828125" text="Handy" />
+                                    <TableColumn fx:id="emailColumn" prefWidth="154.40005493164062" text="Email" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Bekannte">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="Kollege">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
